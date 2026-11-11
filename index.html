@@ -1,0 +1,1235 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NARAWEAR | Local Clothing Brand</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg: #f8f6f1;
+      --surface: #ffffff;
+      --text: #22221f;
+      --muted: #77766f;
+      --accent: #a47750;
+      --dark: #22221f;
+      --border: #e8e4dc;
+    }
+
+    body.dark {
+      --bg: #171715;
+      --surface: #242420;
+      --text: #f5f1e9;
+      --muted: #b6b2a9;
+      --accent: #d4a77b;
+      --dark: #f5f1e9;
+      --border: #3c3a34;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      transition: .3s;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    img {
+      width: 100%;
+      display: block;
+      object-fit: cover;
+    }
+
+    button {
+      font-family: inherit;
+      cursor: pointer;
+    }
+
+    .container {
+      width: 88%;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    /* NAVBAR */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+    }
+
+    nav {
+      min-height: 75px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-size: 27px;
+      font-weight: 700;
+      letter-spacing: 3px;
+    }
+
+    .logo span {
+      color: var(--accent);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-size: 13px;
+      font-weight: 600;
+      transition: .3s;
+    }
+
+    .nav-links a:hover {
+      color: var(--accent);
+    }
+
+    .nav-actions {
+      display: flex;
+      gap: 12px;
+      align-items: center;
+    }
+
+    .icon-btn {
+      border: 1px solid var(--border);
+      background: var(--bg);
+      color: var(--text);
+      padding: 9px 12px;
+      border-radius: 50px;
+      font-size: 17px;
+    }
+
+    .menu-btn {
+      display: none;
+    }
+
+    /* BUTTON */
+    .btn {
+      display: inline-block;
+      background: var(--dark);
+      color: var(--bg);
+      padding: 14px 25px;
+      border-radius: 3px;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      border: 1px solid var(--dark);
+      transition: .3s;
+    }
+
+    .btn:hover {
+      background: var(--accent);
+      border-color: var(--accent);
+      color: white;
+      transform: translateY(-3px);
+    }
+
+    .btn-outline {
+      background: transparent;
+      color: var(--text);
+      border-color: var(--border);
+    }
+
+    /* MARKETPLACE / SHOPEE */
+    .btn-shopee {
+      display: inline-block;
+      background: #ee4d2d;
+      color: #fff;
+      border: 1px solid #ee4d2d;
+      padding: 12px 18px;
+      border-radius: 3px;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: .5px;
+      text-align: center;
+      transition: .3s;
+    }
+
+    .btn-shopee:hover {
+      background: #d93f20;
+      border-color: #d93f20;
+      color: #fff;
+      transform: translateY(-2px);
+    }
+
+    .product-actions {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-top: 15px;
+    }
+
+    .marketplace-note {
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.6;
+      margin-top: 12px;
+    }
+
+    .nav-shopee {
+      padding: 10px 15px;
+      font-size: 11px;
+    }
+
+    /* HERO */
+    .hero {
+      min-height: 610px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+      gap: 45px;
+      padding: 65px 0;
+    }
+
+    .hero-content .eyebrow {
+      color: var(--accent);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 3px;
+      margin-bottom: 20px;
+    }
+
+    .hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(42px, 6vw, 72px);
+      line-height: 1.1;
+      margin-bottom: 22px;
+    }
+
+    .hero h1 span {
+      color: var(--accent);
+    }
+
+    .hero p {
+      color: var(--muted);
+      line-height: 1.8;
+      max-width: 450px;
+      margin-bottom: 30px;
+    }
+
+    .hero-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .hero-image {
+      height: 480px;
+      position: relative;
+    }
+
+    .hero-image img {
+      height: 100%;
+      border-radius: 5px;
+    }
+
+    .hero-label {
+      position: absolute;
+      bottom: 20px;
+      left: -20px;
+      background: var(--surface);
+      padding: 18px 24px;
+      box-shadow: 0 5px 25px #00000012;
+    }
+
+    .hero-label strong {
+      display: block;
+      font-size: 20px;
+    }
+
+    .hero-label small {
+      color: var(--muted);
+    }
+
+    /* SECTION */
+    section {
+      padding: 85px 0;
+    }
+
+    .section-heading {
+      text-align: center;
+      margin-bottom: 45px;
+    }
+
+    .section-heading small {
+      color: var(--accent);
+      font-weight: 700;
+      letter-spacing: 3px;
+    }
+
+    .section-heading h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 38px;
+      margin: 12px 0;
+    }
+
+    .section-heading p {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    /* ABOUT */
+    .about {
+      background: var(--surface);
+    }
+
+    .about-content {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+    }
+
+    .about-image {
+      height: 430px;
+    }
+
+    .about-image img {
+      height: 100%;
+      border-radius: 4px;
+    }
+
+    .about-text small {
+      color: var(--accent);
+      font-weight: 700;
+      letter-spacing: 2px;
+    }
+
+    .about-text h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 38px;
+      margin: 15px 0;
+    }
+
+    .about-text p {
+      color: var(--muted);
+      line-height: 1.9;
+      margin-bottom: 18px;
+    }
+
+    .values {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 15px;
+      margin-top: 25px;
+    }
+
+    .value-item {
+      padding: 18px;
+      background: var(--bg);
+      border-left: 3px solid var(--accent);
+    }
+
+    .value-item strong {
+      display: block;
+      margin-bottom: 6px;
+    }
+
+    .value-item span {
+      font-size: 12px;
+      color: var(--muted);
+    }
+
+    /* PRODUCT */
+    .filter-buttons {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 35px;
+    }
+
+    .filter-btn {
+      padding: 10px 22px;
+      border: 1px solid var(--border);
+      background: var(--surface);
+      color: var(--text);
+      border-radius: 30px;
+      font-size: 12px;
+    }
+
+    .filter-btn.active,
+    .filter-btn:hover {
+      background: var(--dark);
+      color: var(--bg);
+    }
+
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 25px;
+    }
+
+    .product-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      overflow: hidden;
+      transition: .3s;
+    }
+
+    .product-card:hover {
+      transform: translateY(-7px);
+      box-shadow: 0 12px 30px #00000012;
+    }
+
+    .product-card img {
+      height: 320px;
+      transition: .4s;
+    }
+
+    .product-card:hover img {
+      transform: scale(1.04);
+    }
+
+    .product-info {
+      padding: 20px;
+    }
+
+    .product-info small {
+      color: var(--accent);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .product-info h3 {
+      margin: 8px 0;
+      font-size: 17px;
+    }
+
+    .product-info p {
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.6;
+      margin-bottom: 13px;
+    }
+
+    .product-bottom {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .price {
+      font-weight: 700;
+      color: var(--accent);
+    }
+
+    .detail-btn {
+      border: none;
+      background: transparent;
+      color: var(--text);
+      font-weight: 700;
+      font-size: 12px;
+    }
+
+    /* GALLERY */
+    .gallery {
+      background: var(--surface);
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-auto-rows: 220px;
+      gap: 12px;
+    }
+
+    .gallery-grid img {
+      height: 100%;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: .3s;
+    }
+
+    .gallery-grid img:hover {
+      opacity: .8;
+      transform: scale(.98);
+    }
+
+    .gallery-grid img:first-child {
+      grid-column: span 2;
+      grid-row: span 2;
+    }
+
+    /* CONTACT */
+    .contact-content {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 50px;
+    }
+
+    .contact-info h3,
+    .contact-form h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 25px;
+      margin-bottom: 22px;
+    }
+
+    .contact-item {
+      margin-bottom: 22px;
+    }
+
+    .contact-item strong {
+      display: block;
+      margin-bottom: 6px;
+    }
+
+    .contact-item p,
+    .contact-item a {
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.7;
+    }
+
+    .contact-form {
+      background: var(--surface);
+      padding: 30px;
+      border: 1px solid var(--border);
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+      width: 100%;
+      padding: 14px;
+      margin-bottom: 15px;
+      border: 1px solid var(--border);
+      background: var(--bg);
+      color: var(--text);
+      font-family: inherit;
+      outline: none;
+      border-radius: 3px;
+    }
+
+    .contact-form input:focus,
+    .contact-form textarea:focus {
+      border-color: var(--accent);
+    }
+
+    .contact-form textarea {
+      min-height: 120px;
+      resize: vertical;
+    }
+
+    .contact-form .btn {
+      width: 100%;
+    }
+
+    #form-message {
+      font-size: 13px;
+      margin-top: 12px;
+      color: var(--accent);
+    }
+
+    /* FOOTER */
+    footer {
+      background: #22221f;
+      color: #f8f6f1;
+      padding: 45px 0 20px;
+    }
+
+    .footer-content {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 25px;
+      padding-bottom: 30px;
+    }
+
+    .footer-content p {
+      color: #aaa79f;
+      font-size: 13px;
+      line-height: 1.8;
+      max-width: 350px;
+      margin-top: 12px;
+    }
+
+    .social-links {
+      display: flex;
+      gap: 18px;
+      margin-top: 15px;
+      font-size: 13px;
+    }
+
+    .social-links a:hover {
+      color: #d4a77b;
+    }
+
+    .copyright {
+      border-top: 1px solid #45443e;
+      padding-top: 20px;
+      text-align: center;
+      color: #aaa79f;
+      font-size: 12px;
+    }
+
+    /* MODAL */
+    .modal {
+      display: none;
+      position: fixed;
+      inset: 0;
+      z-index: 200;
+      background: #000000a8;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+    }
+
+    .modal.show {
+      display: flex;
+    }
+
+    .modal-content {
+      background: var(--surface);
+      color: var(--text);
+      max-width: 450px;
+      width: 100%;
+      padding: 30px;
+      border-radius: 5px;
+      position: relative;
+    }
+
+    .modal-content img {
+      height: 230px;
+      margin-bottom: 18px;
+    }
+
+    .close-modal {
+      position: absolute;
+      right: 15px;
+      top: 12px;
+      border: none;
+      background: none;
+      color: var(--text);
+      font-size: 25px;
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 850px) {
+      .nav-links {
+        gap: 15px;
+      }
+
+      .hero {
+        gap: 25px;
+      }
+
+      .product-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 650px) {
+      .container {
+        width: 90%;
+      }
+
+      .menu-btn {
+        display: block;
+      }
+
+      .nav-shopee {
+        padding: 8px 10px;
+        font-size: 9px;
+      }
+
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 75px;
+        left: 0;
+        width: 100%;
+        background: var(--surface);
+        flex-direction: column;
+        padding: 25px;
+        border-bottom: 1px solid var(--border);
+      }
+
+      .nav-links.show {
+        display: flex;
+      }
+
+      .hero,
+      .about-content,
+      .contact-content {
+        grid-template-columns: 1fr;
+      }
+
+      .hero {
+        padding-top: 45px;
+      }
+
+      .hero-image {
+        height: 350px;
+      }
+
+      .hero-label {
+        left: 10px;
+      }
+
+      section {
+        padding: 60px 0;
+      }
+
+      .section-heading h2,
+      .about-text h2 {
+        font-size: 30px;
+      }
+
+      .product-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .product-card img {
+        height: 350px;
+      }
+
+      .gallery-grid {
+        grid-auto-rows: 150px;
+      }
+
+      .values {
+        grid-template-columns: 1fr;
+      }
+
+      .footer-content {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- NAVBAR -->
+  <header>
+    <div class="container">
+      <nav>
+        <a href="#home" class="logo">NARA<span>WEAR.</span></a>
+
+        <ul class="nav-links" id="navLinks">
+          <li><a href="#home">HOME</a></li>
+          <li><a href="#about">ABOUT</a></li>
+          <li><a href="#product">PRODUCT</a></li>
+          <li><a href="#gallery">GALLERY</a></li>
+          <li><a href="#contact">CONTACT</a></li>
+        </ul>
+
+        <div class="nav-actions">
+          <a class="btn-shopee nav-shopee" href="https://id.shp.ee/5LQcTSNG?share_channel_code=1" target="_blank" rel="noopener noreferrer">BELI DI SHOPEE</a>
+          <button class="icon-btn" id="themeBtn" aria-label="Ganti tema">☾</button>
+          <button class="icon-btn menu-btn" id="menuBtn" aria-label="Buka menu">☰</button>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <!-- HOME -->
+  <main>
+    <section class="container hero" id="home">
+      <div class="hero-content">
+        <div class="eyebrow">LOCAL BRAND • EST. 2024</div>
+        <h1>Wear Your <span>Own</span> Story.</h1>
+        <p>
+          NARAWEAR adalah brand clothing lokal yang menghadirkan
+          pakaian modern, nyaman, dan berkualitas untuk menemani
+          gaya sehari-hari. Tampil percaya diri dengan karakter
+          gayamu sendiri.
+        </p>
+        <div class="hero-buttons">
+          <a href="#product" class="btn">EXPLORE COLLECTION</a>
+          <a href="#about" class="btn btn-outline">OUR STORY</a>
+          <a href="https://id.shp.ee/5LQcTSNG?share_channel_code=1" target="_blank" rel="noopener noreferrer" class="btn-shopee">KUNJUNGI TOKO SHOPEE</a>
+        </div>
+      </div>
+
+      <div class="hero-image">
+        <img src="gambar1.jpeg"
+             alt="Model koleksi fashion NARAWEAR">
+        <div class="hero-label">
+          <strong>NEW COLLECTION</strong>
+          <small>Simple style, timeless identity.</small>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section class="about" id="about">
+      <div class="container about-content">
+        <div class="about-image">
+          <img src="gambar2.jpeg"
+               alt="Aktivitas fashion dan clothing">
+        </div>
+
+        <div class="about-text">
+          <small>GET TO KNOW US</small>
+          <h2>Fashion Is More Than Just Clothing.</h2>
+          <p>
+            NARAWEAR merupakan UMKM yang bergerak di bidang fashion
+            dan clothing. Bisnis ini dibangun dari keinginan untuk
+            menghadirkan pakaian berkualitas dengan desain sederhana
+            yang tetap mengikuti perkembangan tren.
+          </p>
+          <p>
+            Kami percaya bahwa setiap orang memiliki gaya dan cerita
+            masing-masing. Karena itu, NARAWEAR menghadirkan koleksi
+            yang mudah dipadukan, nyaman digunakan, dan cocok untuk
+            berbagai aktivitas.
+          </p>
+
+          <div class="values">
+            <div class="value-item">
+              <strong>Quality</strong>
+              <span>Mengutamakan kualitas bahan dan jahitan.</span>
+            </div>
+            <div class="value-item">
+              <strong>Comfort</strong>
+              <span>Nyaman digunakan dalam aktivitas sehari-hari.</span>
+            </div>
+            <div class="value-item">
+              <strong>Style</strong>
+              <span>Desain modern dan mudah dipadukan.</span>
+            </div>
+            <div class="value-item">
+              <strong>Affordable</strong>
+              <span>Harga terjangkau untuk berbagai kalangan.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PRODUCT -->
+    <section id="product">
+      <div class="container">
+        <div class="section-heading">
+          <small>OUR COLLECTION</small>
+          <h2>Featured Products</h2>
+          <p>Pilihan koleksi terbaik dari NARAWEAR.</p>
+        </div>
+
+        <div class="filter-buttons">
+          <button class="filter-btn active" data-filter="all">All Products</button>
+          <button class="filter-btn" data-filter="tshirt">T-Shirt</button>
+          <button class="filter-btn" data-filter="hoodie">Hoodie</button>
+          <button class="filter-btn" data-filter="shirt">Shirt</button>
+        </div>
+
+        <div class="product-grid">
+
+          <div class="product-card" data-category="tshirt" data-shopee-url="https://s.shopee.co.id/9fMNfM01zw?share_channel_code=1">
+            <img src="gambar2.jpeg"
+                 alt="Basic T-Shirt Pink">
+            <div class="product-info">
+              <small>T-Shirt</small>
+              <h3>Basic T-Shirt Pink</h3>
+              <p>Kaos berbahan cotton combed yang nyaman.</p>
+              <div class="product-bottom">
+                <span class="price">Rp89.000</span>
+                <button class="detail-btn"
+                  onclick="showProduct('Basic T-Shirt Pink','Rp89.000','Kaos berbahan cotton combed, nyaman dan cocok untuk daily outfit.','gambar2.jpeg')">
+                  DETAIL →
+                </button>
+              </div>
+              <a class="btn-shopee" href="https://s.shopee.co.id/9fMNfM01zw?share_channel_code=1" target="_blank" rel="noopener noreferrer">BELI DI SHOPEE</a>
+            </div>
+          </div>
+
+          <div class="product-card" data-category="hoodie" data-shopee-url="https://s.shopee.co.id/7fbJI0ltVm?share_channel_code=1">
+            <img src="gamba3.jpeg"
+                 alt="DRESS CREAM">
+            <div class="product-info">
+              <small>DRESSCREAM</small>
+              <h3>DRESS CREAM</h3>
+              <p>Dress Elegan dengan bahan fleece yang lembut.</p>
+              <div class="product-bottom">
+                <span class="price">Rp179.000</span>
+                <button class="detail-btn"
+                  onclick="showProduct('DRESS CREAM','Rp179.000','DRESS CREAM Elegan berbahan fleece yang hangat dan nyaman untuk aktivitas sehari-hari.','gamba3.jpeg')">
+                  DETAIL →
+                </button>
+              </div>
+              <a class="btn-shopee" href="https://s.shopee.co.id/7fbJI0ltVm?share_channel_code=1" target="_blank" rel="noopener noreferrer">BELI DI SHOPEE</a>
+            </div>
+          </div>
+
+          <div class="product-card" data-category="shirt" data-shopee-url="https://s.shopee.co.id/W88ke0UiX?share_channel_code=1">
+            <img src="gambar4.jpeg"
+                 alt="DRESS BLUE">
+            <div class="product-info">
+              <small>DressBlue</small>
+              <h3>Casual Daily Shirt</h3>
+              <p>Dress Elegan  dengan tampilan simpel dan elegan.</p>
+              <div class="product-bottom">
+                <span class="price">Rp129.000</span>
+                <button class="detail-btn"
+                  onclick="showProduct('DRESS BLUE','Rp129.000','DRESS BLUE Elegan dengan desain simpel untuk penampilan santai maupun semi-formal.','gambar4.jpeg')">
+                  DETAIL →
+                </button>
+              </div>
+              <a class="btn-shopee" href="https://s.shopee.co.id/W88ke0UiX?share_channel_code=1" target="_blank" rel="noopener noreferrer">BELI DI SHOPEE</a>
+            </div>
+          </div>
+
+          <div class="product-card" data-category="tshirt" data-shopee-url="https://s.shopee.co.id/3qOaikK1sl?share_channel_code=1">
+            <img src="gambar5.jpeg"
+                 alt="SPORTSWEAR PINK">
+            <div class="product-info">
+              <small>SPORTSWEAR</small>
+              <h3>Graphic SPORTSWEAR</h3>
+              <p>Baju olahraga dengan desain modern dan menarik.</p>
+              <div class="product-bottom">
+                <span class="price">Rp99.000</span>
+                <button class="detail-btn"
+                  onclick="showProduct('SPORTSWEAR PINK','Rp99.000','Baju Olahraga dengan desain modern untuk melengkapi gaya casual.','gambar5.jpeg')">
+                  DETAIL →
+                </button>
+              </div>
+              <a class="btn-shopee" href="https://s.shopee.co.id/3qOaikK1sl?share_channel_code=1" target="_blank" rel="noopener noreferrer">BELI DI SHOPEE</a>
+            </div>
+          </div>
+
+          <div class="product-card" data-category="hoodie" data-shopee-url="https://s.shopee.co.id/2VtD8FFnbg?share_channel_code=1">
+            <img src="gambar1.jpeg"
+                 alt="Tanktop BLACK">
+            <div class="product-info">
+              <small>Tanktop</small>
+              <h3>Tanktop BLACK</h3>
+              <p>Tanktop dengan model klasik dan warna netral.</p>
+              <div class="product-bottom">
+                <span class="price">Rp189.000</span>
+                <button class="detail-btn"
+                  onclick="showProduct('Tanktop BLACK','Rp189.000','Tanktop Black model klasik dengan warna netral yang mudah dipadukan.','gambar1.jpeg')">
+                  DETAIL →
+                </button>
+              </div>
+              <a class="btn-shopee" href="https://s.shopee.co.id/2VtD8FFnbg?share_channel_code=1" target="_blank" rel="noopener noreferrer">BELI DI SHOPEE</a>
+            </div>
+          </div>
+
+          <div class="product-card" data-category="shirt" data-shopee-url="https://shopee.co.id/search?keyword=NARAWEAR%20Oversized%20Shirt">
+            <img src="gambar6.jpeg"
+                 alt="TankTop Black">
+            <div class="product-info">
+              <small>Tanktop</small>
+              <h3>Tanktop</h3>
+              <p>Tanktop untuk gaya santai dan kekinian.</p>
+              <div class="product-bottom">
+                <span class="price">Rp139.000</span>
+                <button class="detail-btn"
+                  onclick="showProduct('Tanktop Black','Rp139.000','Kemeja oversized dengan potongan santai dan desain kekinian.','gambar6.jpeg')">
+                  DETAIL →
+                </button>
+              </div>
+              <a class="btn-shopee" href="https://shopee.co.id/search?keyword=NARAWEAR%20Oversized%20Shirt" target="_blank" rel="noopener noreferrer">BELI DI SHOPEE</a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- GALLERY -->
+    <section class="gallery" id="gallery">
+      <div class="container">
+        <div class="section-heading">
+          <small>OUR MOMENTS</small>
+          <h2>Style & Inspiration</h2>
+          <p>Beberapa inspirasi gaya dan koleksi NARAWEAR.</p>
+        </div>
+
+        <div class="gallery-grid">
+          <img src="gambar7.png"
+               alt="Inspirasi outfit 1">
+          <img src="https://images.unsplash.com/photo-1483985988355-763728e1935b?w=700"
+               alt="Inspirasi outfit 2">
+          <img src="https://images.unsplash.com/photo-1523381210434-271e8be1f52b?w=700"
+               alt="Koleksi pakaian">
+          <img src="gambar8.png"
+               alt="Inspirasi outfit 3">
+          <img src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=700"
+               alt="Suasana toko fashion">
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact">
+      <div class="container">
+        <div class="section-heading">
+          <small>GET IN TOUCH</small>
+          <h2>Let's Connect With Us</h2>
+          <p>Hubungi kami untuk informasi produk dan pemesanan.</p>
+        </div>
+
+        <div class="contact-content">
+          <div class="contact-info">
+            <h3>Contact Information</h3>
+
+            <div class="contact-item">
+              <strong>📍 Location</strong>
+              <p>Jakarta, Indonesia</p>
+            </div>
+
+            <div class="contact-item">
+              <strong>📞 WhatsApp</strong>
+              <a href="https://wa.me/6285121997099" target="_blank">
+                0851-2199-7099
+              </a>
+            </div>
+
+            <div class="contact-item">
+              <strong>✉ Email</strong>
+              <p>narawear540@email.com</p>
+            </div>
+
+            <div class="contact-item">
+              <strong>🕒 Operational Hours</strong>
+              <p>Senin - Sabtu: 09.00 - 20.00 WIB</p>
+              <p>Minggu: 10.00 - 17.00 WIB</p>
+            </div>
+
+            <div class="contact-item">
+              <strong>🛒 Marketplace</strong>
+              <p>Produk NARAWEAR juga dapat dibeli melalui Shopee.</p>
+              <a class="btn-shopee" href="https://id.shp.ee/5LQcTSNG?share_channel_code=1" target="_blank" rel="noopener noreferrer">KUNJUNGI TOKO SHOPEE</a>
+            </div>
+
+            <div class="contact-item">
+              <strong>Social Media</strong>
+              <div class="social-links">
+                <a href="https://www.instagram.com/nara.wear1?cplk=MWZuZm1saTI5NHIyeA%3D%3D&utm_source=qr" target="_blank">Instagram</a>
+                <a href="https://www.tiktok.com/@nara.wear1?_r=1&_t=ZS-9BJkuJb42gH" target="_blank">TikTok</a>
+                <a href="https://facebook.com/" target="_blank">Facebook</a>
+              </div>
+            </div>
+          </div>
+
+          <form class="contact-form" id="contactForm">
+            <h3>Send Us a Message</h3>
+
+            <input type="text" id="name" placeholder="Nama lengkap">
+            <input type="email" id="email" placeholder="Alamat email">
+            <input type="text" id="subject" placeholder="Subjek pesan">
+            <textarea id="message" placeholder="Tulis pesan Anda..."></textarea>
+
+            <button type="submit" class="btn">KIRIM PESAN</button>
+            <p id="form-message"></p>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div>
+          <a href="#home" class="logo">NARA<span>WEAR.</span></a>
+          <p>
+            Local clothing brand yang menghadirkan gaya modern,
+            nyaman, dan berkualitas untuk semua.
+          </p>
+        </div>
+
+        <div>
+          <strong>Explore</strong>
+          <div class="social-links">
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#product">Product</a>
+            <a href="#contact">Contact</a>
+            <a href="https://id.shp.ee/5LQcTSNG?share_channel_code=1" target="_blank" rel="noopener noreferrer">Shopee Store</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="copyright">
+        © <span id="year"></span> NARAWEAR. All Rights Reserved.
+      </div>
+    </div>
+  </footer>
+
+  <!-- PRODUCT MODAL -->
+  <div class="modal" id="productModal">
+    <div class="modal-content">
+      <button class="close-modal" id="closeModal" aria-label="Tutup">&times;</button>
+      <img id="modalImage" src="" alt="Foto detail produk">
+      <h2 id="modalName"></h2>
+      <p id="modalDescription" style="margin: 12px 0; line-height: 1.7;"></p>
+      <h3 id="modalPrice" style="color: var(--accent); margin-bottom: 20px;"></h3>
+      <div class="product-actions">
+        <a id="marketplaceLink" href="https://id.shp.ee/5LQcTSNG?share_channel_code=1" target="_blank" rel="noopener noreferrer" class="btn-shopee">BELI DI SHOPEE</a>
+        <a id="orderLink" href="#" target="_blank" rel="noopener noreferrer" class="btn">PESAN VIA WHATSAPP</a>
+      </div>
+      <p class="marketplace-note">Anda akan diarahkan ke halaman Shopee untuk melihat produk dan menyelesaikan pembelian.</p>
+    </div>
+  </div>
+
+  <script>
+    // MOBILE NAVIGATION
+    const menuBtn = document.getElementById("menuBtn");
+    const navLinks = document.getElementById("navLinks");
+
+    menuBtn.addEventListener("click", function () {
+      navLinks.classList.toggle("show");
+    });
+
+    document.querySelectorAll(".nav-links a").forEach(link => {
+      link.addEventListener("click", function () {
+        navLinks.classList.remove("show");
+      });
+    });
+
+    // DARK / LIGHT MODE
+    const themeBtn = document.getElementById("themeBtn");
+
+    themeBtn.addEventListener("click", function () {
+      document.body.classList.toggle("dark");
+
+      if (document.body.classList.contains("dark")) {
+        themeBtn.textContent = "☀";
+      } else {
+        themeBtn.textContent = "☾";
+      }
+    });
+
+    // FILTER PRODUCT
+    const filterButtons = document.querySelectorAll(".filter-btn");
+    const productCards = document.querySelectorAll(".product-card");
+
+    filterButtons.forEach(button => {
+      button.addEventListener("click", function () {
+        filterButtons.forEach(btn => btn.classList.remove("active"));
+        this.classList.add("active");
+
+        const category = this.getAttribute("data-filter");
+
+        productCards.forEach(card => {
+          const cardCategory = card.getAttribute("data-category");
+
+          if (category === "all" || category === cardCategory) {
+            card.style.display = "block";
+          } else {
+            card.style.display = "none";
+          }
+        });
+      });
+    });
+
+    // PRODUCT MODAL
+    const modal = document.getElementById("productModal");
+
+    function showProduct(name, price, description, image) {
+      document.getElementById("modalName").textContent = name;
+      document.getElementById("modalPrice").textContent = price;
+      document.getElementById("modalDescription").textContent = description;
+      document.getElementById("modalImage").src = image;
+
+      const orderMessage = encodeURIComponent(
+        "Halo NARAWEAR, saya ingin memesan " + name + " dengan harga " + price
+      );
+
+      document.getElementById("orderLink").href =
+        "https://wa.me/6285121997099?text=" + orderMessage;
+
+      // Arahkan tombol marketplace ke hasil pencarian produk di Shopee
+      const productCard = Array.from(document.querySelectorAll(".product-card"))
+        .find(card => card.querySelector("h3")?.textContent.trim() === name);
+      const marketplaceUrl = productCard?.dataset.shopeeUrl ||
+        "https://id.shp.ee/5LQcTSNG?share_channel_code=1" + encodeURIComponent("NARAWEAR " + name);
+      document.getElementById("marketplaceLink").href = marketplaceUrl;
+
+      modal.classList.add("show");
+    }
+
+    document.getElementById("closeModal").addEventListener("click", function () {
+      modal.classList.remove("show");
+    });
+
+    modal.addEventListener("click", function (event) {
+      if (event.target === modal) {
+        modal.classList.remove("show");
+      }
+    });
+
+    // CONTACT FORM VALIDATION
+    const contactForm = document.getElementById("contactForm");
+
+    contactForm.addEventListener("submit", function (event) {
+      event.preventDefault();
+
+      const name = document.getElementById("name").value.trim();
+      const email = document.getElementById("email").value.trim();
+      const subject = document.getElementById("subject").value.trim();
+      const message = document.getElementById("message").value.trim();
+      const formMessage = document.getElementById("form-message");
+
+      if (!name || !email || !subject || !message) {
+        formMessage.textContent = "Semua kolom wajib diisi!";
+        return;
+      }
+
+      const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+      if (!emailPattern.test(email)) {
+        formMessage.textContent = "Format email tidak valid!";
+        return;
+      }
+
+      const whatsappMessage = encodeURIComponent(
+        "Halo NARAWEAR!\n" +
+        "Nama: " + name + "\n" +
+        "Email: " + email + "\n" +
+        "Subjek: " + subject + "\n" +
+        "Pesan: " + message
+      );
+
+      formMessage.textContent = "Pesan siap dikirim melalui WhatsApp.";
+
+      window.open(
+        "https://wa.me/6285121997099?text=" + whatsappMessage,
+        "_blank"
+      );
+
+      contactForm.reset();
+    });
+
+    // DYNAMIC YEAR
+    document.getElementById("year").textContent =
+      new Date().getFullYear();
+  </script>
+
+</body>
+</html>
